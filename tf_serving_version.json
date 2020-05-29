@@ -1,0 +1,1 @@
+{"name": "v2", "machine_type": "n1-standard-2", "deployment_uri": "gs://kfserving-samples/models/tensorflow/flowers", "container": {"image": "gcr.io/mlops-inference/tensorflow-serving:2.1.0", "args": ["--rest_api_port=8080", "--model_name=mymodel", "--model_base_path=$(AIP_STORAGE_URI)"]}, "routes": {"predict": "/v1/models/mymodel:predict", "health": "/v1/models/mymodel"}}
